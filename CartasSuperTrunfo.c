@@ -9,9 +9,10 @@
 int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    char estado, codigo[5], nome[50];
-    int populacao, pontosTuristicos;
-    float area, pib;
+    char estado, estado2, codigo[5], codigo2[5], nome[50], nome2[50];
+    int  pontosTuristicos, pontosTuristicos2;
+    float populacao, populacao2, area, area2, pib, pib2;
+    float densPop, densPop2, pibPerCapita1, pibPerCapita2;
 
     printf("Digite a siglas do estado: \n");
     scanf(" %c", &estado);
@@ -23,7 +24,7 @@ int main() {
     scanf("%s", nome);
 
     printf("Digite a quantidade da população: \n");
-    scanf("%d", &populacao);
+    scanf("%f", &populacao);
 
     printf("Digite o tamanho da área: \n");
     scanf("%f", &area);
@@ -34,9 +35,8 @@ int main() {
     printf("Quantidade de pontos turísticos: \n");
     scanf("%d", &pontosTuristicos);
 
-    char estado2, codigo2[5], nome2[50];
-    int populacao2, pontosTuristicos2;
-    float area2, pib2;
+    densPop = populacao / area;
+    pibPerCapita1 = (pib * 1000000000) / populacao;
 
     printf("Digite a siglas do estado: \n");
     scanf(" %c", &estado2);
@@ -48,7 +48,7 @@ int main() {
     scanf("%s", nome2);
 
     printf("Digite a quantidade da população: \n");
-    scanf("%d", &populacao2);
+    scanf("%f", &populacao2);
 
     printf("Digite o tamanho da área: \n");
     scanf("%f", &area2);
@@ -59,24 +59,31 @@ int main() {
     printf("Quantidade de pontos turísticos: \n");
     scanf("%d", &pontosTuristicos2);
 
+    densPop2 = populacao2 / area2;
+    pibPerCapita2 = (pib2 * 1000000000) / populacao2;
+
     printf("\nCarta 1: \n");
     printf("Estado: %c \n", estado);
     printf("Código: %s \n", codigo);
     printf("Nome da cidade: %s \n", nome);
-    printf("População: %d \n", populacao);
+    printf("População: %.2f \n", populacao);
     printf("Área: %.2f Km²\n", area);
     printf("PIB: %.2f bilhões de reais\n", pib);
     printf("Número de pontos turísticos: %d \n", pontosTuristicos);
+    printf("Densidade Populacional: %.2f hab/Km² \n", densPop);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita1);
 
     printf("\nCarta 2: \n");
     printf("Estado: %c \n", estado2);
     printf("Código: %s \n", codigo2);
     printf("Nome da cidade: %s \n", nome2);
-    printf("População: %d \n", populacao2);
+    printf("População: %.2f \n", populacao2);
     printf("Área: %.2f Km²\n", area2);
     printf("PIB: %.2f bilhões de reais\n", pib2);
     printf("Número de pontos turísticos: %d \n", pontosTuristicos2);
-    
+    printf("Densidade Populacional: %.2f hab/Km² \n", densPop2);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita2);
+
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
