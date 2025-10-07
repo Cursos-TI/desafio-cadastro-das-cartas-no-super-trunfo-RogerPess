@@ -175,103 +175,113 @@ int main()
         return 0;
     }
 
+    float valorEscolhido1_C1, valorEscolhido1_C2;
+    float valorEscolhido2_C1, valorEscolhido2_C2;
+
+    // Primeiro atributo
     switch (opcao1)
     {
     case 1:
         sprintf(atributo1, "Populacao");
-        somaCarta1 += valorPopulacao;
-        somaCarta2 += valorPopulacao2;
+        valorEscolhido1_C1 = valorPopulacao;
+        valorEscolhido1_C2 = valorPopulacao2;
         break;
     case 2:
         sprintf(atributo1, "Area");
-        somaCarta1 += valorArea;
-        somaCarta2 += valorArea2;
+        valorEscolhido1_C1 = valorArea;
+        valorEscolhido1_C2 = valorArea2;
         break;
     case 3:
         sprintf(atributo1, "PIB");
-        somaCarta1 += valorPIB;
-        somaCarta2 += valorPIB2;
+        valorEscolhido1_C1 = valorPIB;
+        valorEscolhido1_C2 = valorPIB2;
         break;
     case 4:
         sprintf(atributo1, "Pontos Turisticos");
-        somaCarta1 += valorPontoTuristicos;
-        somaCarta2 += valorPontoTuristicos2;
+        valorEscolhido1_C1 = valorPontoTuristicos;
+        valorEscolhido1_C2 = valorPontoTuristicos2;
         break;
     case 5:
         sprintf(atributo1, "Densidade Populacional");
-        somaCarta1 += valorDensPop;
-        somaCarta2 += valorDensPop2;
+        valorEscolhido1_C1 = valorDensPop;
+        valorEscolhido1_C2 = valorDensPop2;
         break;
     case 6:
         sprintf(atributo1, "PIB per Capita");
-        somaCarta1 += valorPibPerCap;
-        somaCarta2 += valorPibPerCap2;
+        valorEscolhido1_C1 = valorPibPerCap;
+        valorEscolhido1_C2 = valorPibPerCap2;
         break;
     case 7:
         sprintf(atributo1, "Super Poder");
-        somaCarta1 += valorSuperPoder;
-        somaCarta2 += valorSuperPoder2;
+        valorEscolhido1_C1 = valorSuperPoder;
+        valorEscolhido1_C2 = valorSuperPoder2;
         break;
     }
 
+    somaCarta1 += valorEscolhido1_C1;
+    somaCarta2 += valorEscolhido1_C2;
+
+    // Segundo atributo
     switch (opcao2)
     {
     case 1:
         sprintf(atributo2, "Populacao");
-        somaCarta1 += valorPopulacao;
-        somaCarta2 += valorPopulacao2;
+        valorEscolhido2_C1 = valorPopulacao;
+        valorEscolhido2_C2 = valorPopulacao2;
         break;
     case 2:
         sprintf(atributo2, "Area");
-        somaCarta1 += valorArea;
-        somaCarta2 += valorArea2;
+        valorEscolhido2_C1 = valorArea;
+        valorEscolhido2_C2 = valorArea2;
         break;
     case 3:
         sprintf(atributo2, "PIB");
-        somaCarta1 += valorPIB;
-        somaCarta2 += valorPIB2;
+        valorEscolhido2_C1 = valorPIB;
+        valorEscolhido2_C2 = valorPIB2;
         break;
     case 4:
         sprintf(atributo2, "Pontos Turisticos");
-        somaCarta1 += valorPontoTuristicos;
-        somaCarta2 += valorPontoTuristicos2;
+        valorEscolhido2_C1 = valorPontoTuristicos;
+        valorEscolhido2_C2 = valorPontoTuristicos2;
         break;
     case 5:
         sprintf(atributo2, "Densidade Populacional");
-        somaCarta1 += valorDensPop;
-        somaCarta2 += valorDensPop2;
+        valorEscolhido2_C1 = valorDensPop;
+        valorEscolhido2_C2 = valorDensPop2;
         break;
     case 6:
         sprintf(atributo2, "PIB per Capita");
-        somaCarta1 += valorPibPerCap;
-        somaCarta2 += valorPibPerCap2;
+        valorEscolhido2_C1 = valorPibPerCap;
+        valorEscolhido2_C2 = valorPibPerCap2;
         break;
     case 7:
         sprintf(atributo2, "Super Poder");
-        somaCarta1 += valorSuperPoder;
-        somaCarta2 += valorSuperPoder2;
+        valorEscolhido2_C1 = valorSuperPoder;
+        valorEscolhido2_C2 = valorSuperPoder2;
         break;
     }
+    somaCarta1 += valorEscolhido2_C1;
+    somaCarta2 += valorEscolhido2_C2;
 
+    // Impressão final corrigida
     printf("\n==================== RESULTADO FINAL ====================\n");
     printf("1) Paises: %s (Carta 1)  x  %s (Carta 2)\n", nome, nome2);
     printf("2) Atributos usados: %s e %s\n", atributo1, atributo2);
 
     printf("3) Valores de cada atributo:\n");
-    printf("   - %s: Carta 1 = %.2f | Carta 2 = %.2f\n", atributo1, somaCarta1 - somaCarta2, somaCarta2 - somaCarta1);
-    printf("   - %s: Carta 1 = %.2f | Carta 2 = %.2f\n", atributo2, somaCarta1 - somaCarta2, somaCarta2 - somaCarta1);
+    printf("   - %s: Carta 1 = %.2f | Carta 2 = %.2f\n", atributo1, valorEscolhido1_C1, valorEscolhido1_C2);
+    printf("   - %s: Carta 1 = %.2f | Carta 2 = %.2f\n", atributo2, valorEscolhido2_C1, valorEscolhido2_C2);
 
     printf("4) Soma total dos dois atributos:\n");
     printf("   - Carta 1 (%s) = %.2f\n", nome, somaCarta1);
     printf("   - Carta 2 (%s) = %.2f\n", nome2, somaCarta2);
 
     printf("5) Resultado: ");
-    if (somaCarta1 > somaCarta2)
-        printf("Carta 1 venceu (%s)\n", nome);
-    else if (somaCarta2 > somaCarta1)
-        printf("Carta 2 venceu (%s)\n", nome2);
-    else
-        printf("Empate!\n");
+    (somaCarta1 == somaCarta2)
+        ? printf("Empate!\n")
+        : printf("Carta %d venceu (%s)\n",
+                 somaCarta1 > somaCarta2 ? 1 : 2,
+                 somaCarta1 > somaCarta2 ? nome : nome2);
 
     return 0;
 }
